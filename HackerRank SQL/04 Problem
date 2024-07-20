@@ -1,0 +1,9 @@
+Problem 4 : Select By ID 
+
+Link to see the problem and table : https://www.hackerrank.com/challenges/select-by-id/problem?isFullScreen=true
+
+Solution:
+
+SELECT  *
+FROM CITY
+WHERE ID ='1661'
