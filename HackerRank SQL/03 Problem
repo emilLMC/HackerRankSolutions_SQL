@@ -1,0 +1,7 @@
+Problem 3 : Query all columns (attributes) for every row in the CITY table.
+
+LInk to see the table : https://www.hackerrank.com/challenges/select-all-sql/problem?isFullScreen=true
+
+Solution:
+SELECT * 
+FROM CITY
