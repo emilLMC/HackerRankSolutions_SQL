@@ -1,0 +1,41 @@
+Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. Your result cannot contain duplicates.
+Input Format
+The STATION table is described as follows:
+https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg
+
+SOLUTION:
+
+SELECT DISTINCT CITY 
+FROM STATION
+WHERE LOWER(CITY) REGEXP '^[aeiou].*[aeiou]$';
+
+
+hackerrank doesnt support regexp for this one so below is longer way around
+
+SELECT DISTINCT CITY 
+FROM STATION
+WHERE (LOWER(CITY) LIKE 'a%' AND LOWER(CITY) LIKE '%a')
+   OR (LOWER(CITY) LIKE 'a%' AND LOWER(CITY) LIKE '%e')
+   OR (LOWER(CITY) LIKE 'a%' AND LOWER(CITY) LIKE '%i')
+   OR (LOWER(CITY) LIKE 'a%' AND LOWER(CITY) LIKE '%o')
+   OR (LOWER(CITY) LIKE 'a%' AND LOWER(CITY) LIKE '%u')
+   OR (LOWER(CITY) LIKE 'e%' AND LOWER(CITY) LIKE '%a')
+   OR (LOWER(CITY) LIKE 'e%' AND LOWER(CITY) LIKE '%e')
+   OR (LOWER(CITY) LIKE 'e%' AND LOWER(CITY) LIKE '%i')
+   OR (LOWER(CITY) LIKE 'e%' AND LOWER(CITY) LIKE '%o')
+   OR (LOWER(CITY) LIKE 'e%' AND LOWER(CITY) LIKE '%u')
+   OR (LOWER(CITY) LIKE 'i%' AND LOWER(CITY) LIKE '%a')
+   OR (LOWER(CITY) LIKE 'i%' AND LOWER(CITY) LIKE '%e')
+   OR (LOWER(CITY) LIKE 'i%' AND LOWER(CITY) LIKE '%i')
+   OR (LOWER(CITY) LIKE 'i%' AND LOWER(CITY) LIKE '%o')
+   OR (LOWER(CITY) LIKE 'i%' AND LOWER(CITY) LIKE '%u')
+   OR (LOWER(CITY) LIKE 'o%' AND LOWER(CITY) LIKE '%a')
+   OR (LOWER(CITY) LIKE 'o%' AND LOWER(CITY) LIKE '%e')
+   OR (LOWER(CITY) LIKE 'o%' AND LOWER(CITY) LIKE '%i')
+   OR (LOWER(CITY) LIKE 'o%' AND LOWER(CITY) LIKE '%o')
+   OR (LOWER(CITY) LIKE 'o%' AND LOWER(CITY) LIKE '%u')
+   OR (LOWER(CITY) LIKE 'u%' AND LOWER(CITY) LIKE '%a')
+   OR (LOWER(CITY) LIKE 'u%' AND LOWER(CITY) LIKE '%e')
+   OR (LOWER(CITY) LIKE 'u%' AND LOWER(CITY) LIKE '%i')
+   OR (LOWER(CITY) LIKE 'u%' AND LOWER(CITY) LIKE '%o')
+   OR (LOWER(CITY) LIKE 'u%' AND LOWER(CITY) LIKE '%u')
